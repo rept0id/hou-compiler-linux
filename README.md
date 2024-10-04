@@ -6,6 +6,16 @@
 
 Run Hellenic Open University's Software Engineering PLH10 compiler -finally- under Linux !
 
+## Dependencies
+
+This program requires the 32-bit version of Wine. It actually attempts to install it by itself:
+
+```
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install wine32
+```
+
 ## How to Use
 
 ### 1. Create the program
