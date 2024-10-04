@@ -76,3 +76,7 @@ DWSE MOY ENAN ARITHMO: 5
 Here, it is clear that 5 is a number. 
 
 However, if it were text, use Greeklish, such as "Paradeigma" instead of "Παράδειγμα."
+
+## Developer Notes
+
+There is a reason all files are thrown on the same place and it's because the compiler strugles to work with files out of it's directory.
