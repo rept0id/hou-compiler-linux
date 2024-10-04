@@ -2,9 +2,15 @@
 
 ![Screenshot](doc/assets/img/header1.png)
 
-# Purpose
+## Purpose
 
 Run Hellenic Open University's Software Engineering PLH10 compiler -finally- under Linux !
+
+## Disclaimer
+
+Please make sure to back up your scripts regularly and have access to a Windows machine in case this program doesn't work for you.
+
+I take no responsibility for its use in your university or in any other way.
 
 ## Dependencies
 
