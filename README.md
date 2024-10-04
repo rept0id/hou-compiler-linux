@@ -1,36 +1,78 @@
 # EAP-Linux
 
-This is a fork of the Computer Science program compiler from the Hellenic Open University, designed specifically to work on Linux.
+![Screenshot](doc/assets/img/header1.png)
 
-![Screenshot](https://github.com/rept0id/EAP-linux-compiler/blob/main/Screenshot%20at%202022-08-25%2021-21-42.png)
+# Purpose
 
-## Problem Solving
-English :
-
-Even when running under Wine, there were issues with encoding that made it impossible to run this compiler on Linux in a way that a human can understand and interact with.
-
-Greek :
-
-Ακόμη και όταν εκτελούνταν με χρήση του Wine, υπήρχαν προβλήματα με την κωδικοποίηση που καθιστούσαν τον compiler πρακτικά μη λειτουργικό.
+Run Hellenic Open University's Software Engineering PLH10 compiler -finally- under Linux !
 
 ## How to Use
-English :
 
-To use this compiler, simply write your code in the "input.eap" file and execute "./plh10.sh". This will compile your program and create a log file named "output_new.txt". After compilation, the program will be executed, and you should see everything working correctly.
+### 1. Create the program
 
-Please note that "Output.txt" and "Output_new.txt" are log files that are updated during the compilation process.
+Create a file -at the root of the project- named `<NAME>.utf8.eap` -  where `<NAME>` is the name you want your program to have.
 
-Greek :
+For example : 
+```
+bubbleshort.utf8.eap
+```
 
-Για να χρησιμοποιήσετε αυτόν τον μεταγλωττιστή, απλώς γράψτε τον κώδικά σας στο αρχείο "input.eap" και εκτελέστε το "./plh10.sh". Αυτό θα μεταγλωττίσει το πρόγραμμά σας και θα δημιουργήσει ένα αρχείο καταγραφής με το όνομα "output_new.txt". Μετά τη μεταγλώττιση, το πρόγραμμα θα εκτελεστεί και όλα θα λειτουργούν σωστά.
+In this file, write your code and save it. 
 
-Τα "Output.txt" και "Output_new.txt" είναι αρχεία καταγραφής που ενημερώνονται κατά τη διαδικασία μεταγλώττισης.
+The content must be in UTF-8 encoding (which is usually the default).
+
+### 2. Encode, compile, run
+
+Now, simply run `./pli10.sh <NAME>`. Without the `.utf8.eap` part.
+
+For example :
+```
+./pli10.sh bubbleshort
+```
+
+**This will encode\*, compile and run the program.**
+
+\* By encoding, we mean converting from UTF-8 to CP1253, which is required by the legacy compiler.
+
+### 3. Examples
+
+You can find the following examples :
+- `test1.utf8.eap` 
+- `test2.utf8.eap`
+
+To run them : 
+
+```
+/pli10.sh test1
+```
+```
+/pli10.sh test2
+```
 
 ## Weak Points
-English :
 
-While prompting the user for text input is supported, it is recommended to use "Greeklish" or, more generally, Latin characters when doing so.
+**Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !**
 
-Greek :
+### Example :
 
-Ενώ υποστηρίζεται η εισαγωγή κειμένου, συνιστάται η χρήση "Greeklish" ή, γενικότερα, λατινικών χαρακτήρων.
+#### Code :
+
+```
+ΑΛΓΟΡΙΘΜΟΣ ΔΟΚΙΜΗ
+	ΔΕΔΟΜΕΝΑ x:INTEGER;
+ΑΡΧΗ
+	ΤΥΠΩΣΕ ("DWSE MOY ENAN ARITHMO: ", EOLN);
+	ΔΙΑΒΑΣΕ (x);
+	ΤΥΠΩΣΕ ("MOY EDWSES TO: ", x, EOLN)
+ΤΕΛΟΣ
+```
+
+#### Execution :
+
+```
+DWSE MOY ENAN ARITHMO: 5
+```
+
+Here, it is clear that 5 is a number. 
+
+However, if it were text, use Greeklish, such as "Paradeigma" instead of "Παράδειγμα."

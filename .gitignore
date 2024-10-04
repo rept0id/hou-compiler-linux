@@ -1,0 +1,9 @@
+wine32
+
+.inited
+
+*.eap
+*.eap.exe
+
+!test1.utf8.eap
+!test2.utf8.eap
