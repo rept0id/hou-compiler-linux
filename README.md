@@ -1,4 +1,4 @@
-# EAP-Linux
+# hou-compiler-linux
 
 ![Screenshot](doc/assets/img/header1.png)
 
