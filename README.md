@@ -8,7 +8,7 @@ Run Hellenic Open University's Software Engineering PLH10 compiler -finally- und
 
 ## Dependencies
 
-This program requires the 32-bit version of Wine. It actually attempts to install it by itself:
+This program requires the 32-bit version of Wine. If you check the script (pli10.sh), it actually attempts to install it by itself:
 
 ```
 sudo dpkg --add-architecture i386
