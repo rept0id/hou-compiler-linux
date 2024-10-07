@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Run Hellenic Open University's Software Engineering PLH10 compiler -finally- under Linux !
+Run Hellenic Open University's Software Engineering PLH10 compiler -finally- on Linux !
 
 ## Disclaimer
 
