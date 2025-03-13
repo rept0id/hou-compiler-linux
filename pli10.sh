@@ -45,12 +45,13 @@ if [ ! -e .inited ]; then
     init
 fi
 
-#compile
-
+# encode
 iconv -f UTF-8 -t cp1253 ./${SRC_FILENAME}.utf8.eap > ./${SRC_FILENAME}.cp1253.eap
 
+# compile
+#
+# the reversed pipe to echo is used to print the compiler's output through iconv
 echo | WINEPREFIX="$WINEPREFIX" wine cmd /c "pli10.exe ${SRC_FILENAME}.cp1253.eap" | iconv -f cp1253 -t UTF-8
 
-#run
-
+# run
 WINEPREFIX="$WINEPREFIX" wine cmd /c "${SRC_FILENAME}.cp1253.eap.exe"
