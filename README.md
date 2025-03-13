@@ -30,7 +30,7 @@ Create a file -at the root of the project- named `<NAME>.utf8.eap` -  where `<NA
 
 For example : 
 ```
-bubbleshort.utf8.eap
+test1.utf8.eap
 ```
 
 In this file, write your code and save it. 
@@ -39,11 +39,15 @@ The content must be in UTF-8 encoding (which is usually the default).
 
 ### 2. Encode, compile, run
 
+At this point, please note that if this is your first time running this tool:
+1. A Wine graphical window may open. Close it if you don't want to alter any options.
+2. The TDM-GCC compiler installer will open. Follow the installation process.
+
 Now, simply run `./pli10.sh <NAME>`. Without the `.utf8.eap` part.
 
 For example :
 ```
-./pli10.sh bubbleshort
+./pli10.sh test1
 ```
 
 **This will encode\*, compile and run the program.**
