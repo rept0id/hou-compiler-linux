@@ -71,31 +71,9 @@ To run them :
 
 ## Weak Points
 
-**Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !**
+~~**Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !**~~
 
-### Example :
-
-#### Code :
-
-```
-ΑΛΓΟΡΙΘΜΟΣ ΔΟΚΙΜΗ
-	ΔΕΔΟΜΕΝΑ x:INTEGER;
-ΑΡΧΗ
-	ΤΥΠΩΣΕ ("DWSE MOY ENAN ARITHMO: ", EOLN);
-	ΔΙΑΒΑΣΕ (x);
-	ΤΥΠΩΣΕ ("MOY EDWSES TO: ", x, EOLN)
-ΤΕΛΟΣ
-```
-
-#### Execution :
-
-```
-DWSE MOY ENAN ARITHMO: 5
-```
-
-Here, it is clear that 5 is a number. 
-
-However, if it were text, use Greeklish, such as "Paradeigma" instead of "Παράδειγμα."
+Since release v.2.0.0, (merge of dev-rel-2-buffer branch) Greek characters are fully supported everywhere.
 
 ## Developer Notes
 
