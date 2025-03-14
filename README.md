@@ -71,9 +71,9 @@ To run them :
 
 ## Weak Points
 
-~~**Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !**~~
+~~Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !~~
 
-Since release v.2.0.0, (merge of dev-rel-2-buffer branch) Greek characters are fully supported everywhere.
+**Since release v.2.0.0, (merge of dev-rel-2-buffer branch) Greek characters are fully supported everywhere.**
 
 ## Developer Notes
 
