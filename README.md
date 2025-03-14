@@ -63,10 +63,10 @@ You can find the following examples :
 To run them : 
 
 ```
-/pli10.sh test1
+./pli10.sh test1
 ```
 ```
-/pli10.sh test2
+./pli10.sh test2
 ```
 
 ## Weak Points
