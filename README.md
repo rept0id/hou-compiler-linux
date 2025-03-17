@@ -12,10 +12,21 @@ Please make sure to back up your scripts regularly and have access to a Windows 
 
 I take no responsibility for its use in your university or in any other way.
 
-## Dependencies
+## Preparation
 
-This program requires the 32-bit version of Wine. If you check the script (pli10.sh), it actually attempts to install it by itself:
+Before you use this program, please :
 
+1. Give apropriate permissions
+
+```
+sudo chmod +x ./pli10.sh
+```
+
+2. Install Wine 32-bit
+
+This program requires the 32-bit version of Wine.
+
+If you are in a Debian-based OS, such as Ubuntu, Mint, Pop-OS, etc, you can easily do it by running :
 ```
 sudo dpkg --add-architecture i386
 sudo apt update
@@ -28,12 +39,12 @@ sudo apt install wine32
 
 Create a file -at the root of the project- named `<NAME>.utf8.eap` -  where `<NAME>` is the name you want your program to have.
 
-For example : 
+For example :
 ```
 test1.utf8.eap
 ```
 
-In this file, write your code and save it. 
+In this file, write your code and save it.
 
 The content must be in UTF-8 encoding (which is usually the default).
 
@@ -60,11 +71,11 @@ For example :
 ## Examples
 
 You can find the following examples :
-- `test1.utf8.eap` 
+- `test1.utf8.eap`
 - `test2.utf8.eap`
 - `test3.utf8.eap`
 
-To run them : 
+To run them :
 
 ```
 ./pli10.sh test1
