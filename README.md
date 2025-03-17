@@ -59,6 +59,7 @@ For example :
 You can find the following examples :
 - `test1.utf8.eap` 
 - `test2.utf8.eap`
+- `test3.utf8.eap`
 
 To run them : 
 
@@ -67,6 +68,9 @@ To run them :
 ```
 ```
 ./pli10.sh test2
+```
+```
+./pli10.sh test3
 ```
 
 ## Weak Points
