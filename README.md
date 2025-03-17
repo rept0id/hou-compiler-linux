@@ -86,5 +86,13 @@ To run them :
 
 There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
 
+## Changelog
+
+```
+V.1.0.0. : Initial Release, simple wine wrapper
+V.2.0.0. : Encoding compatibility support for compiling phase (converting from utf8 to CHCP1253)
+V.3.0.0. : Encoding compatibility support for running phase (buffering and converting on the fly of input and output)
+```
+
 ## Related sources
 [When is a program good ? Reverse engineering HOU’s compiler](https://blog.simplecode.gr/2025/03/when-is-a-program-good-reverse-engineering-hous-compiler/)
