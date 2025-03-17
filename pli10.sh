@@ -83,7 +83,7 @@ function run() {
 
     ### # # ###
 
-    LANG=el_GR.CP-1253 WINEPREFIX="$WINEPREFIX" wine cmd /c "chcp 1253 && ${SRC_FILENAME}.cp1253.eap.exe" | tee $SRC_BUFFER > /dev/null &
+    WINEPREFIX="$WINEPREFIX" wine cmd /c "chcp 1253 >nul & ${SRC_FILENAME}.cp1253.eap.exe" | tee "$SRC_BUFFER" > /dev/null &
 
     WINE_PID=$!
 

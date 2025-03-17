@@ -1,6 +1,7 @@
 wine32
 
 .inited
+.prepared
 
 *.eap
 *.eap.exe
