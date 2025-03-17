@@ -1,6 +1,6 @@
 # hou-compiler-linux
 
-![Screenshot](doc/assets/img/header1.png)
+![Screenshot](doc/assets/img/header-2.png)
 
 ## Purpose
 
@@ -52,13 +52,17 @@ For example :
 
 **This will encode\*, compile and run the program.**
 
-\* By encoding, we mean converting from UTF-8 to CP1253, which is required by the legacy compiler.
+❗ **Running is happening through a wrapper that handles encoding of input and output as well !**
+**For optimal compatibility, don't procceed to run the produced executable your self.**
 
-### 3. Examples
+\* *By encoding, we mean converting from UTF-8 to CP1253 (Windows-1253), which is required by the legacy compiler.*
+
+## Examples
 
 You can find the following examples :
 - `test1.utf8.eap` 
 - `test2.utf8.eap`
+- `test3.utf8.eap`
 
 To run them : 
 
@@ -68,13 +72,29 @@ To run them :
 ```
 ./pli10.sh test2
 ```
+```
+./pli10.sh test3
+```
 
 ## Weak Points
 
 ~~Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !~~
 
-**Greek characters are now fully supported everywhere.**
+❗ **Greek characters are now fully supported everywhere.** This is possbile thanks to the fact that the running phase is now taking place through a wrapper that takes care of input and output encodings.
 
 ## Developer Notes
 
-There is a reason all files are thrown on the same place and it's because the compiler strugles to work with files out of it's directory.
+There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
+
+## Changelog
+
+(sum of [./doc/changelog.md](./doc/changelog.md))
+
+```
+V.1.0.0. : Initial Release, simple wine wrapper.
+V.2.0.0. : Encoding compatibility support for compiling phase (converting from utf8 to CHCP1253).
+V.3.0.0. : Encoding compatibility support for running phase (buffering and converting on the fly of input and output).
+```
+
+## Related sources
+[When is a program good ? Reverse engineering HOU’s compiler](https://blog.simplecode.gr/2025/03/when-is-a-program-good-reverse-engineering-hous-compiler/)
