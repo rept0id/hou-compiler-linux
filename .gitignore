@@ -1,10 +1,16 @@
+wine
 wine32
+wine64
 
 .inited
 .prepared
 
 *.eap
-*.eap.exe
 
 !test1.utf8.eap
 !test2.utf8.eap
+!test3.utf8.eap
+
+*.eap.exe
+
+.ropeproject

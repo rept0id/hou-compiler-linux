@@ -1,93 +1,54 @@
 #!/bin/bash
 
+WINEPREFIX_LOCAL="$(pwd)/wine"
+
 SRC_FILENAME=$1
 
 PATH_TMP_DIR="/tmp/$$"
 PATH_BUFFER="$PATH_TMP_DIR/buffer.txt"
 
-WINEPREFIX="$(pwd)/wine32"
+PATH_TDM_GCC_32_SRC="$(pwd)/TDM-GCC-32-WINE-32"
+PATH_TDM_GCC_32_WINE_DEST="$WINEPREFIX_LOCAL/drive_c/TDM-GCC-32" # don't get mistaken and append $(pwd) here
 
 ### # # ###
 
-function help_wine_32() {
+function help_wine_install_32() {
     if command -v apt &>/dev/null; then
-        echo -e "\n[hou-compiler-linux] detected. To install wine32:";
-        echo "sudo dpkg --add-architecture i386";
-        echo "sudo apt update";
-        echo "sudo apt install wine32";
-    elif command -v dnf &>/dev/null; then
-        echo "Fedora detected. To install wine 32-bit support:";
-        echo "sudo dnf install wine";
-        echo "sudo dnf install wine.i686";
-    elif command -v yum &>/dev/null; then
-        echo "RHEL/CentOS detected. To install wine 32-bit support:";
-        echo "sudo yum install wine";
-        echo "sudo yum install wine.i686";
-    elif command -v pacman &>/dev/null; then
-        echo "Arch Linux detected. To install wine 32-bit support:";
-        echo "sudo pacman -S wine";
-        echo "sudo pacman -S lib32-mesa lib32-libpulse";
-    elif command -v zypper &>/dev/null; then
-        echo "openSUSE detected. To install wine 32-bit support:";
-        echo "sudo zypper install wine";
-        echo "sudo zypper install wine-32bit";
-    elif command -v apk &>/dev/null; then
-        echo "Alpine Linux detected. Wine installation is complex due to musl libc and lack of standard multi-lib.";
-        echo "Refer to: https://wiki.alpinelinux.org/wiki/Wine";
-    elif command -v eopkg &>/dev/null; then
-        echo "Solus detected. To install wine:";
-        echo "sudo eopkg install wine";
-    elif command -v xbps-install &>/dev/null; then
-        echo "Void Linux detected. Multi-lib support must be enabled:";
-        echo "Refer to: https://docs.voidlinux.org/usage/multilib/";
-    elif command -v nix-env &>/dev/null; then
-        echo "NixOS detected. Installing Wine may require enabling multi-lib and using nixpkgs:";
-        echo "nix-env -iA nixpkgs.wineWowPackages.stable";
-    elif command -v brew &>/dev/null; then
-        echo "Homebrew detected. On macOS/Linuxbrew:";
-        echo "brew install --cask wine-stable";
-        echo "(Note: 32-bit apps not supported on modern macOS.)";
-    elif command -v pkg &>/dev/null; then
-        echo "FreeBSD detected. Install Wine with:";
-        echo "sudo pkg install wine";
+        echo -e "\n[hou-compiler-linux]: Please install Wine (32-bit) by running: ";
+        echo -e "[hou-compiler-linux]: sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install wine32";
     else
-        echo "Unknown package manager. Please install Wine 32-bit support manually.";
+        echo -e "\n[hou-compiler-linux]: Please install Wine (32-bit).";
     fi
 }
 
 ### # # ###
 
-function prepare_wine_32() {
-    mkdir -p "$WINEPREFIX";
+function prepare_wine() {
+    mkdir -p "$WINEPREFIX_LOCAL";
 
-    if [ ! -d "$WINEPREFIX/drive_c" ]; then
-        echo -e "\n[hou-compiler-linux] Error: Preparing 32-bit Wine prefix in $WINEPREFIX...";
+    if [ ! -d "$WINEPREFIX_LOCAL/drive_c" ]; then
+        echo -e "\n[hou-compiler-linux] Preparing Wine (32-bit) prefix in $WINEPREFIX_LOCAL...";
 
-        WINEARCH=win32 WINEPREFIX="$WINEPREFIX" wineboot;
+        WINEARCH=win32 WINEPREFIX="$WINEPREFIX_LOCAL" wineboot;
         if [ $? -ne 0 ]; then
-            echo -e "\n[hou-compiler-linux] Error: Preperation of 32-bit Wine failed.";
+            echo -e "\n[hou-compiler-linux] Error: Preperation of Wine (32-bit) failed.";
 
-            help_wine32;
+            ### # # ###
+
+            rm -rf $WINEPREFIX_LOCAL
+
+            ### # # ###
+
+            help_wine_install_32;
 
             exit 1;
         fi
     fi
 }
 
-function prepare_tdm_gcc_32() {
-    if [ ! -d "$WINEPREFIX/drive_c/TDM-GCC-32" ]; then
-        WINEPREFIX="$WINEPREFIX" wine tdm-gcc-10.3.0.exe;
-        if [ $? -ne 0 ]; then
-            echo -e "\n[hou-compiler-linux] Error: Failed to run TDM-GCC installer.";
-
-            exit 1;
-        fi
-        if [ ! -d "$WINEPREFIX/drive_c/TDM-GCC-32" ]; then
-            echo -e "\n[hou-compiler-linux] Error: TDM-GCC does not appear to be installed under $WINEPREFIX/drive_c/TDM-GCC-32";
-            echo -e "\n[hou-compiler-linux] Please install manually: WINEPREFIX=\"$WINEPREFIX\" wine tdm-gcc-10.3.0.exe";
-
-            exit 1;
-        fi
+function prepare_tdm_gcc() {
+    if [ ! -d "$WINEPREFIX_LOCAL/drive_c/TDM-GCC-32" ]; then
+        cp -r $PATH_TDM_GCC_32_SRC $PATH_TDM_GCC_32_WINE_DEST
     fi
 }
 
@@ -97,10 +58,10 @@ function prepare() {
     ### # # ###
 
     # prepare : wine
-    prepare_wine_32;
+    prepare_wine;
 
     # prepare : wine : TDM-GCC-32
-    prepare_tdm_gcc_32();
+    prepare_tdm_gcc;
 
     ### # # ###
 
@@ -132,7 +93,7 @@ function compile() {
 
     ### # # ###
 
-    echo | WINEPREFIX="$WINEPREFIX" wine cmd /c "chcp 1253 && pli10.exe ${SRC_FILENAME}.cp1253.eap" | iconv -f CP1253 -t UTF-8;
+    echo | WINEPREFIX="$WINEPREFIX_LOCAL" wine cmd /c "chcp 1253 && pli10.exe ${SRC_FILENAME}.cp1253.eap" | iconv -f CP1253 -t UTF-8;
 }
 
 function run() {
@@ -144,7 +105,7 @@ function run() {
 
     ### # # ###
 
-    WINEPREFIX="$WINEPREFIX" wine cmd /c "chcp 1253 >nul & ${SRC_FILENAME}.cp1253.eap.exe" | tee "$PATH_BUFFER" > /dev/null &
+    WINEPREFIX="$WINEPREFIX_LOCAL" wine cmd /c "chcp 1253 >nul & ${SRC_FILENAME}.cp1253.eap.exe" | tee "$PATH_BUFFER" > /dev/null &
 
     WINE_PID=$!;
 
