@@ -67,21 +67,14 @@ For example :
 ## Examples
 
 You can find the following examples :
-- `test1.utf8.eap`
-- `test2.utf8.eap`
-- `test3.utf8.eap`
+ - `test1.utf8.eap`
+ - `test2.utf8.eap`
+ - `test3.utf8.eap`
 
 To run them :
-
-```
-./pli10.sh test1
-```
-```
-./pli10.sh test2
-```
-```
-./pli10.sh test3
-```
+ - `./pli10.sh test1`
+ - `./pli10.sh test2`
+ - `./pli10.sh test3`
 
 ## Weak Points
 
@@ -91,7 +84,7 @@ To run them :
 
 ## Developer Notes
 
-There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
+ - There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
 
 ## Changelog
 
