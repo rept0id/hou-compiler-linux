@@ -52,6 +52,8 @@ For example :
 
 **This will encode\*, compile and run the program.**
 
+Running is happening through a wrapper that converts encoding of input and output as well ! So don't procceed to run the executable your self.
+
 \* By encoding, we mean converting from UTF-8 to CP1253 (Windows-1253), which is required by the legacy compiler.
 
 ## Examples
