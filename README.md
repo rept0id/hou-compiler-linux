@@ -80,7 +80,7 @@ To run them :
 
 ~~Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !~~
 
-**Greek characters are now fully supported everywhere.** This is possbile thanks to the fact that the running phase is now taking place through a wrapper that takes care of it.
+**Greek characters are now fully supported everywhere.** This is possbile thanks to the fact that the running phase is now taking place through a wrapper that takes care of input and output encodings.
 
 ## Developer Notes
 
