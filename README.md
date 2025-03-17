@@ -1,6 +1,6 @@
 # hou-compiler-linux
 
-![Screenshot](doc/assets/img/header1.png)
+![Screenshot](doc/assets/img/header-2.png)
 
 ## Purpose
 
