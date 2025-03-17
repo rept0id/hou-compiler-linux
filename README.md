@@ -85,3 +85,6 @@ To run them :
 ## Developer Notes
 
 There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
+
+## Related sources
+[When is a program good ? Reverse engineering HOU’s compiler](https://blog.simplecode.gr/2025/03/when-is-a-program-good-reverse-engineering-hous-compiler/)
