@@ -54,7 +54,7 @@ For example :
 
 \* By encoding, we mean converting from UTF-8 to CP1253, which is required by the legacy compiler.
 
-### 3. Examples
+## Examples
 
 You can find the following examples :
 - `test1.utf8.eap` 
