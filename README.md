@@ -50,11 +50,7 @@ The content must be in UTF-8 encoding (which is usually the default).
 
 ### 2. Encode, compile, run
 
-At this point, please note that if this is your first time running this tool:
-1. A Wine graphical window may open. Close it if you don't want to alter any options.
-2. The TDM-GCC compiler installer will open. Follow the installation process.
-
-Now, simply run `./pli10.sh <NAME>`. Without the `.utf8.eap` part.
+Now, simply run `./pli10.sh <NAME>`. ( Without the `.utf8.eap` part. )
 
 For example :
 ```
