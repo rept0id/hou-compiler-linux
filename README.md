@@ -81,4 +81,4 @@ To run them :
 
 ## Developer Notes
 
-There is a reason all files are thrown on the same place and it's because the compiler strugles to work with files out of it's directory.
+There is a reason all files are thrown on the same place and it's because the compiler strugles generally to work with files out of it's directory.
