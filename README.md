@@ -52,7 +52,7 @@ For example :
 
 **This will encode\*, compile and run the program.**
 
-\* By encoding, we mean converting from UTF-8 to CP1253, which is required by the legacy compiler.
+\* By encoding, we mean converting from UTF-8 to CP1253 (Windows-1253), which is required by the legacy compiler.
 
 ## Examples
 
