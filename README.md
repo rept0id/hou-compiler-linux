@@ -52,8 +52,8 @@ For example :
 
 **This will encode\*, compile and run the program.**
 
-**Running is happening through a wrapper that handles encoding of input and output as well ! 
-For optimal compatibility, don't procceed to run the produced executable your self.**
+❗ **Running is happening through a wrapper that handles encoding of input and output as well !**
+**For optimal compatibility, don't procceed to run the produced executable your self.**
 
 \* *By encoding, we mean converting from UTF-8 to CP1253 (Windows-1253), which is required by the legacy compiler.*
 
@@ -80,7 +80,7 @@ To run them :
 
 ~~Don't use Greek characters in either the output or the input of the program. Use Greeklish instead !~~
 
-**Greek characters are now fully supported everywhere.** This is possbile thanks to the fact that the running phase is now taking place through a wrapper that takes care of input and output encodings.
+❗ **Greek characters are now fully supported everywhere.** This is possbile thanks to the fact that the running phase is now taking place through a wrapper that takes care of input and output encodings.
 
 ## Developer Notes
 
