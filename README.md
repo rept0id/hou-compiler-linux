@@ -91,9 +91,9 @@ There is a reason all files are thrown on the same place and it's because the co
 (sum of [./doc/changelog.md](./doc/changelog.md))
 
 ```
-V.1.0.0. : Initial Release, simple wine wrapper
-V.2.0.0. : Encoding compatibility support for compiling phase (converting from utf8 to CHCP1253)
-V.3.0.0. : Encoding compatibility support for running phase (buffering and converting on the fly of input and output)
+V.1.0.0. : Initial Release, simple wine wrapper.
+V.2.0.0. : Encoding compatibility support for compiling phase (converting from utf8 to CHCP1253).
+V.3.0.0. : Encoding compatibility support for running phase (buffering and converting on the fly of input and output).
 ```
 
 ## Related sources
