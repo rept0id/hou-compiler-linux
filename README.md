@@ -88,6 +88,8 @@ There is a reason all files are thrown on the same place and it's because the co
 
 ## Changelog
 
+(sum of [./doc/changelog.md](./doc/changelog.md))
+
 ```
 V.1.0.0. : Initial Release, simple wine wrapper
 V.2.0.0. : Encoding compatibility support for compiling phase (converting from utf8 to CHCP1253)
