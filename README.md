@@ -106,4 +106,4 @@ Now everything can be run fully through command line without graphics support ne
 ```
 
 ## Related sources
-[When is a program good ? Reverse engineering HOU’s compiler](https://blog.simplecode.gr/2025/03/when-is-a-program-good-reverse-engineering-hous-compiler/)
+[When is a program good ? Reverse engineering HOU’s compiler](https://blog.simplecode.gr/posts/when-is-a-program-good-reverse-engineering-hous-compiler/)
